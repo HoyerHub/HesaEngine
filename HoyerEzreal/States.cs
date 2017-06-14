@@ -14,7 +14,7 @@ public class Combo : State
         if (Helper.CanUseSpell(Q, "Combo"))
         {
             var target = Q.GetTarget();
-            if (Helper.SkillShotCheck(target, Q))
+            if (Helper.SkillShotCheck(target, Q, HitChance.High))
             {
                 Q.Cast(Q.GetPrediction(target).CastPosition);
             }
@@ -22,21 +22,21 @@ public class Combo : State
         if (Helper.CanUseSpell(W, "Combo"))
         {
             var target = W.GetTarget();
-            if (!Helper.MenuCheckBox("Jew", W) || Me.Level > 10 || target.HealthPercent < 30)
+            if (!Helper.MenuCheckBox("Jew", W) || Me.Level > 10 || target.HealthPercent < 40)
             {
-                if (Helper.SkillShotCheck(target, W))
+                if (Helper.SkillShotCheck(target, W, HitChance.High))
                 {
                     W.Cast(W.GetPrediction(target).CastPosition);
                 }
             }
         }
-        if (Helper.CanUseSpell(E, "Finisher") && Me.HealthPercent > 40)
+        if (Helper.CanUseSpell(E, "Finisher") && Me.HealthPercent > 30 && !Me.IsUnderEnemyTurret())
         {
             var target = TargetSelector.GetTarget(1250, TargetSelector.DamageType.Physical);
             if (target == null || !target.IsValidTarget() || target.Distance(Me) < Me.GetRealAutoAttackRange()) return;
 
             var dashPos = Me.Position.Extend(Game.CursorPosition, E.Range);
-            if (target.Distance(dashPos) > Me.GetRealAutoAttackRange() || dashPos.CountEnemiesInRange(850) > 2) return;
+            if (target.Distance(dashPos) > Me.GetRealAutoAttackRange() || dashPos.CountEnemiesInRange(850) > 2 || dashPos.IsUnderEnemyTurret()) return;
 
             var comboDamage = Me.GetAutoAttackDamage(target) * 2 + E.GetDamage(target);
             if (Helper.CanUseSpell(Q, "Combo", true)) comboDamage += Q.GetDamage(target);
@@ -118,7 +118,7 @@ public class Lasthit : State
     {
         if (Helper.CanUseSpell(Q, "Lasthit"))
         {
-            var targets = MinionManager.GetMinions(Q.Range).Where(m => m.Distance(Me) > Me.GetRealAutoAttackRange() && m.Health < Me.GetSpellDamage(m, SpellSlot.Q));
+            var targets = MinionManager.GetMinions(Q.Range).Where(m => m.Distance(Me) + 50 > Me.GetRealAutoAttackRange() && m.Health < Me.GetSpellDamage(m, SpellSlot.Q));
             targets = targets.Where(m => Helper.SkillShotCheck(m, Q)).OrderBy(m => m.Health);
             Q.Cast(targets.First());
         }

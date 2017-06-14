@@ -11,13 +11,13 @@ public class Helper
 
     public static bool CanUseSpell(Spell spell, string menuItem = "", bool ignoreBasicAttack = false)
     {
-        return (!IsBasicAttacking || ignoreBasicAttack) && ObjectManager.Me.CanCast && spell.IsReady() && MenuCheckBox(menuItem, spell) &&
-               spell.ManaCost < ObjectManager.Me.Mana;
+        return (!IsBasicAttacking || ignoreBasicAttack) && spell.IsLearned && ObjectManager.Me.CanCast && spell.IsReady() &&
+               (menuItem == "" || MenuCheckBox(menuItem, spell)) && spell.ManaCost < ObjectManager.Me.Mana;
     }
 
-    public static bool SkillShotCheck(Obj_AI_Base target, Spell spell)
+    public static bool SkillShotCheck(Obj_AI_Base target, Spell spell, HitChance hitChance = HitChance.Medium)
     {
-        return target != null && target.IsValidTarget(spell.Range) && spell.GetPrediction(target).Hitchance >= HitChance.Medium;
+        return target != null && target.IsValidTarget(spell.Range) && spell.GetPrediction(target).Hitchance >= hitChance;
     }
 
     public static bool MenuCheckBox(string query, Spell spell = null)

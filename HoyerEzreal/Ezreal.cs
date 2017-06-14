@@ -65,9 +65,10 @@ public class Ezreal : IScript
         _qMenu.Add(new MenuCheckbox("Combo", "Use Q in Combo", true));
         _qMenu.Add(new MenuCheckbox("Harass", "Use Q in Harass", true));
         _qMenu.Add(new MenuCheckbox("Waveclear", "Use Q to Waveclear", true));
-        _qMenu.Add(new MenuSlider("WaveclearMana", "Mana to Waveclear", 0, 100, 50));
+        _qMenu.Add(new MenuSlider("WaveclearMana", "Min. Mana to Waveclear", 0, 100, 50));
         _qMenu.Add(new MenuCheckbox("Lasthit", "Use Q to Lasthit out of attack range", true));
         _qMenu.Add(new MenuCheckbox("Auto", "Always Q if very high hitchance", true));
+        _qMenu.Add(new MenuSlider("Stack", "Mana to Stack Tear (0 = Off)", 0, 100, 90));
 
         _wMenu = Main.AddSubMenu("W Settings");
         _wMenu.Add(new MenuCheckbox("Combo", "Use W in Combo", true));
@@ -81,6 +82,7 @@ public class Ezreal : IScript
 
         _rMenu = Main.AddSubMenu("R Settings");
         _rMenu.Add(new MenuCheckbox("Finisher", "Use R to finish enemies (safe)", true));
+        _rMenu.Add(new MenuSlider("Multi", "Use R to hit multiple enemies (0 = Off)", 0, 5, 3));
     }
 
     private void SetState()
