@@ -1,0 +1,15 @@
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\HesaEngine.Core.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.DirectInput.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\HesaEngine.Wrapper.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\Runtime.dll
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\HesaEngine.Core.dll.config
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.xml
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.DirectInput.xml
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\Nick\documents\visual studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\obj\Debug\HoyerEzreal.csprojResolveAssemblyReference.cache
+C:\Users\Nick\Documents\Visual Studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\HoyerEzreal.dll
+C:\Users\Nick\Documents\Visual Studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\bin\Debug\HoyerEzreal.pdb
+C:\Users\Nick\Documents\Visual Studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\obj\Debug\HoyerEzreal.dll
+C:\Users\Nick\Documents\Visual Studio 2017\Projects\HoyerBlitzcrank\HoyerBlitzcrank\obj\Debug\HoyerEzreal.pdb
